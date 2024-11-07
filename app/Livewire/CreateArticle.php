@@ -9,18 +9,8 @@ use Livewire\Component;
 
 class CreateArticle extends AdminComponent
 {
-
-
+    
     public  ArticleForm $form;
-//
-//    public function save()
-//    {
-//        $this->form->store();
-//
-//        $this->redirect('/dashboard/articles', navigate: true);
-//
-//    }
-
 
     public function save()
     {

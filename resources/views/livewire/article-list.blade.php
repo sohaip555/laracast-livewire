@@ -21,7 +21,7 @@
                     <td class="px-6 py-3">
                         <a href="/dashboard/articles/{{$article->id}}/edite"
                            class="text-gray-200 p-2 "
-                            wire:
+                            wire:navigate
                         >
                             Edite
                         </a>

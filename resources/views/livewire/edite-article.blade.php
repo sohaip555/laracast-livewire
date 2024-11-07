@@ -16,7 +16,7 @@
             <input
                 type="text"
                 class="p-2 w-full border rounded-md ⬛ bg-gray-700 ⬛ text-white"
-                wire:model="title"
+                wire:model="form.title"
             />
         </div>
         <div>
@@ -30,7 +30,7 @@
             <textarea
                 id="article-content"
                 class="p-2 w-full border rounded-md ⬛ bg-gray-700 ⬛ text-white"
-                wire:model="content">
+                wire:model="form.content">
 
         </textarea>
             <div>

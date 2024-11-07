@@ -9,29 +9,16 @@ use Livewire\Component;
 
 class EditeArticle extends AdminComponent
 {
-    public Article $article;
-    #[Validate('required')]
-    public  $title = '';
-
     public ArticleForm $form;
-
-
-    #[Validate('required')]
-    public  $content = '';
 
     public function mount(Article $article)
     {
-        $this->title = $article->title;
-        $this->content = $article->content;
-
-        $this->article  = $article;
+        $this->form->setArticle($article);
     }
 
     public function save()
     {
-        $this->validate();
-        $this->article->update($this->only(['title', 'content']));
-
+        $this->form->update();
         $this->redirect('/dashboard/articles', navigate: true);
     }
 
