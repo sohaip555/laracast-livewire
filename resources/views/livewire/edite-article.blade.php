@@ -37,6 +37,38 @@
                 @error('content') <span class="text-red-600"> {{ $message }} </span> @enderror
             </div>
         </div>
+
+        <div class="mb-3">
+            <label class="flex items-center">
+                <input type="checkbox" name="published"
+                       class="mr-2"
+                       wire:model="form.published"
+                >
+                Published
+            </label>
+        </div>
+
+        <div class="mb-3 notification-options">
+            <div class="notification-heading mb-2">Notification Options</div>
+            <div class="flex gap-6">
+                <label class="flex items-center" for="email-option">
+                    <input type="radio" value="email" class="mr-1" id="email-option"
+                           wire:model="form.notification">
+                    Email
+                </label>
+                <label class="flex items-center" for="sms-option">
+                    <input type="radio" value="sms" class="mr-1" id="sms-option"
+                           wire:model="form.notification">
+                    SMS
+                </label>
+                <label for="none-option">
+                    <input type="radio" value="none" class="mr-1" id="none-option"
+                           wire:model="form.notification">
+                    None
+                </label>
+            </div>
+        </div>
+
         <div class="mb-3">
             <button
                 class="text-gray-200 p-2 bg-indigo-700 hover:bg-indigo-900 rounded-sm"

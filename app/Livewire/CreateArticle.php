@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class CreateArticle extends AdminComponent
 {
-    
+
     public  ArticleForm $form;
 
     public function save()

@@ -10,6 +10,8 @@ class Article extends Model
     /** @use HasFactory<\Database\Factories\ArticleFactory> */
     use HasFactory;
 
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'content', 'notification', 'published'];
+
+    protected $casts=['published'=>'boolean'];
 
 }

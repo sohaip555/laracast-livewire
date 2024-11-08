@@ -11,7 +11,7 @@ class EditeArticle extends AdminComponent
 {
     public ArticleForm $form;
 
-    public function mount(Article $article)
+    public function mount(Article $article): void
     {
         $this->form->setArticle($article);
     }

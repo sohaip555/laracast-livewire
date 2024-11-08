@@ -21,6 +21,8 @@ class ArticleFactory extends Factory
         return [
             'title' => $this->faker->realText(50),
             'content' => $this->faker->realText(500),
+            'notification' => $this->faker->randomElement(['email', 'sms', 'none']),
+            'published' => $this->faker->randomElement([true, false]),
         ];
     }
 }
