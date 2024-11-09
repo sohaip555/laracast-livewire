@@ -12,7 +12,7 @@
     <h3 class="text-lg ⬛ text-gray-200 mb-3">Create Article</h3>
     <form wire:submit="save">
         <div class="mb-3">
-            <h1 class="block" for="article-title">Title</h1>
+            <h1 class="block " >Title</h1>
             <input
                 type="text"
                 class="p-2 w-full border rounded-md ⬛ bg-gray-700 ⬛ text-white"
@@ -81,13 +81,18 @@
             </div>
         </div>
 
+
         <div class="mb-3 flex items-center">
+
             <button
-                class="text-gray-200 p-2 bg-indigo-700 hover:bg-indigo-900 rounded-sm"
+                class="text-gray-200 p-2 bg-indigo-700  rounded-sm disabled:opacity-75 disabled:bg-blue-300"
                 type="submit"
+                wire:dirty.class="hover:bg-indigo-900" wire:dirty.attr.remove="disabled" wire:target="form.content,form.title"
+                disabled
             >
                 Create
             </button>
+
         </div>
     </form>
 </div>

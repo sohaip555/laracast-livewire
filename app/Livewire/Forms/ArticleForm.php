@@ -13,16 +13,16 @@ class ArticleForm extends Form
     public Article $article;
 
     #[Validate('required')]
-    public  $title = '';
+    public string $title = '';
 
     #[Validate('required')]
-    public  $content = '';
+    public string $content = '';
 
-    public $published = true;
+    public bool $published = true;
 
-    public $notifications = [];
+    public array $notifications;
 
-    public $allowNotifications = false;
+    public bool $allowNotifications = false;
 
     public function setArticle(Article $article): void
     {
