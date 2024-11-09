@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content')->nullable();
             $table->boolean('published');
-            $table->string('notification');
+            $table->string('notifications');
             $table->timestamps();
         });
     }

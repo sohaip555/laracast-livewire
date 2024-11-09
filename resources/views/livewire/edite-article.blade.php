@@ -51,20 +51,33 @@
         <div class="mb-3 notification-options">
             <div class="notification-heading mb-2">Notification Options</div>
             <div class="flex gap-6">
-                <label class="flex items-center" for="email-option">
-                    <input type="radio" value="email" class="mr-1" id="email-option"
-                           wire:model="form.notification">
+                <label class="flex items-center" for="yes-option">
+                    <input type="radio" value="true" class="mr-1"
+                           wire:model.boolean="form.allowNotifications">
+                    Yes
+                </label>
+                <label class="flex items-center" for="no-option">
+                    <input type="radio" value="false" class="mr-1"
+                           wire:model.boolean="form.allowNotifications">
+                    No
+                </label>
+            </div>
+
+            <div x-show="$wire.form.allowNotifications">
+                <label class="flex items-center " for="email-option">
+                    <input type="checkbox" value="email" class="mr-2" id="email-option"
+                           wire:model="form.notifications">
                     Email
                 </label>
-                <label class="flex items-center" for="sms-option">
-                    <input type="radio" value="sms" class="mr-1" id="sms-option"
-                           wire:model="form.notification">
+                <label class="flex items-center " for="sms-option">
+                    <input type="checkbox" value="sms" class="mr-2" id="sms-option"
+                           wire:model="form.notifications">
                     SMS
                 </label>
-                <label for="none-option">
-                    <input type="radio" value="none" class="mr-1" id="none-option"
-                           wire:model="form.notification">
-                    None
+                <label class="flex items-center " for="none-option">
+                    <input type="checkbox" value="push" class="mr-2" id="none-option"
+                           wire:model="form.notifications">
+                    Push
                 </label>
             </div>
         </div>
