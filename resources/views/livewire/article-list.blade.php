@@ -12,11 +12,11 @@
         <div class="">
 
             <button class="text-gray-200 p-2 bg-blue-700  hover:bg-blue-900  rounded-sm"
-                wire:click="showAll()">
+                wire:click="togllePublished(false)">
                 Show all
             </button>
             <button class="text-gray-200 p-2 bg-blue-700  hover:bg-blue-900  rounded-sm w-52"
-                    wire:click="showPublished()">
+                    wire:click="togllePublished(true)">
                 Show Published <livewire:published-count  placeholder_text="loading"/>
             </button>
 
@@ -24,11 +24,10 @@
 
 
     </div>
-    <div class="mt-3">{{$articles->links()}}</div>
+    <div class="mt-3">{{$this->articles->links()}}</div>
 
 
     <table class="w-full">
-
         <thead class="text-xs uppercase bg-gray-700 text-gray-400 ">
             <tr>
                 <th class="px-6 py-3">Title</th>
@@ -36,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($articles as $article)
+            @foreach($this->articles as $article)
                 <tr wire:key="{{$article->id}}"  class="border-b bg-gray-800 border-gray-700">
                     <td class="px-6 py-3">{{$article->title}}</td>
                     <td class="px-6 py-3">

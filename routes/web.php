@@ -12,7 +12,7 @@ Route::get('/', ArticleIndex::class);
 //Route::get('/search', Search::class);
 Route::get('/articles/{article}', showArticle::class);
 Route::get('/dashboard', Dashboard::class);
-Route::get('/dashboard/articles', ArticleList::class);
+Route::get('/dashboard/articles', ArticleList::class)->name('dashboard.articles.index');
 Route::get('/dashboard/articles/create', \App\Livewire\CreateArticle::class);
 Route::get('/dashboard/articles/{article}/edite', \App\Livewire\EditeArticle::class);
 

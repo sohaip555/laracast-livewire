@@ -9,7 +9,7 @@
 
 
 <div class="m-auto w-1/2 mb-4">
-    <h3 class="text-lg ⬛ text-gray-200 mb-3">Edite Article</h3>
+    <h3 class="text-lg ⬛ text-gray-200 mb-3">Edite Article (ID = {{$form->id}})</h3>
     <form wire:submit="save()">
         <div class="mb-3">
             <label wire:dirty.class="text-green-500" wire:target="form.title" class="block">
@@ -38,7 +38,42 @@
 
         </textarea>
             <div>
-                @error('content') <span class="text-red-600"> {{ $message }} </span> @enderror
+                @error('content')
+                    <span class="text-red-600"> {{ $message }} </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="block"  >
+                Photo
+            </label>
+            <div class="flex items-center">
+                <input type="file"
+                       wire:model="form.photo"
+                >
+                <div class="text-center">
+                    @if($form->photo)
+                        <img class="w-1/2 inline" src="{{$form->photo->temporaryUrl()}}" >
+
+                    @elseif($form->photo_path)
+                        <img class="w-1/2 inline" src="{{\Illuminate\Support\Facades\Storage::url($form->photo_path)}}" >
+                        <div class="mt-2">
+                            <button type="button"
+                                    class="text-gray-200 p-2 bg-indigo-700  rounded-sm"
+                                    wire:click="downloadPhoto()"
+                            >
+                                Download
+                            </button>
+                        </div>
+                    @endif
+                </div>
+
+            </div>
+            <div>
+                @error('photo')
+                <span class="text-red-600"> {{ $message }} </span>
+                @enderror
             </div>
         </div>
 
@@ -91,10 +126,8 @@
 
         <div class="mb-3" >
             <button
-                class="text-gray-200 p-2 bg-indigo-700  rounded-sm disabled:opacity-75 disabled:bg-blue-300"
+                class="text-gray-200 p-2 bg-indigo-700  rounded-sm"
                 type="submit"
-                wire:dirty.class="hover:bg-indigo-900"
-                disabled
             >
                 Save
             </button>

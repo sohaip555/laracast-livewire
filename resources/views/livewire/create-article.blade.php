@@ -37,6 +37,30 @@
                 @error('form.content') <span class="text-red-600"> {{ $message }} </span> @enderror
             </div>
         </div>
+
+        <div class="mb-3">
+            <label class="block"  >
+                Photo
+            </label>
+            <div class="flex items-center">
+                <input type="file"
+                       wire:model="form.photo"
+                >
+                <div>
+                    @if($form->photo)
+                        <img class="w-1/2" src="{{$form->photo->temporaryUrl()}}" >
+                    @endif
+                </div>
+
+            </div>
+            <div>
+                @error('photo')
+                <span class="text-red-600"> {{ $message }} </span>
+                @enderror
+            </div>
+        </div>
+
+
         <div class="mb-3">
             <label class="flex items-center">
                 <input type="checkbox" name="published"
@@ -85,10 +109,8 @@
         <div class="mb-3 flex items-center">
 
             <button
-                class="text-gray-200 p-2 bg-indigo-700  rounded-sm disabled:opacity-75 disabled:bg-blue-300"
+                class="text-gray-200 p-2 bg-indigo-700  rounded-sm"
                 type="submit"
-                wire:dirty.class="hover:bg-indigo-900" wire:dirty.attr.remove="disabled" wire:target="form.content,form.title"
-                disabled
             >
                 Create
             </button>
