@@ -18,7 +18,7 @@ class Search extends Component
 
     #[Url(as: 'q', except: '', history: true)]
     public $searchText = '';
-    public $placeHolder = "type something to search";
+    public $placeholder = 'type something to search';
 
 
     #[On('search:clear-results')]

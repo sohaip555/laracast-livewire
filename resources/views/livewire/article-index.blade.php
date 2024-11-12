@@ -1,7 +1,14 @@
 <div class="m-auto w-1/2">
+
+    <div
+    wire:offline>
+        sd;kcjslck
+    </div>
+
     @foreach($articles as $article)
         <div class="mt-4" wire:key="{{$article->id}}">
-                <h1 class="text-lg text-blue-600 hover:text-blue-700">
+                <h1 class="text-lg text-blue-600 hover:text-blue-700"
+                wire:offline.class.remove="text-blue-600 hover:text-blue-700">
                     <a href="/articles/{{$article->id}}">
                     {{$article->title}}
                     </a>

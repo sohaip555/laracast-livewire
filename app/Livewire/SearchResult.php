@@ -11,9 +11,7 @@ class SearchResult extends Component
     #[Reactive]
     public $results = [];
 
-    #[Reactive]
-    public $show = [];
-//
+
 //    public function clear()
 //    {
 //        $this->reset($this->results);

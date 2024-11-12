@@ -24,7 +24,7 @@
             <div class="relative w-full max-w-2xl lg:max-w-7xl">
                 <nav class="bg-gray-900">
                     <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-                        <div class="w-full block" id="navbar-default">
+                        <div class="w-full flex items-center justify-between block" id="navbar-default">
                             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                                 <li>
                                     <a href="/dashboard" class="inline py-2 px-3 text-blue-500">Admin Dashboard</a>
@@ -32,6 +32,13 @@
                                 <li>
                                     <a href="/dashboard/articles" class="inline py-2 px-3 text-blue-500">Article</a>
                                 </li>
+                            </ul>
+                            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                                 @auth
+                                    <li>
+                                        <a href="/logout" class="inline py-2 px-3 text-blue-500">Logout</a>
+                                    </li>
+                                @endauth
                             </ul>
                         </div>
                     </div>
